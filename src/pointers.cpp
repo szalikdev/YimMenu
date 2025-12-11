@@ -639,10 +639,10 @@ namespace big
         // Handle Join Request (partially obfuscated now, crutches deployed)
         {
             "HJR",
-            "4C 8B F1 45 33 ED 48 ? ?",
+            "48 81 EC E8 03 00 00 4C 8B F1",
             [](memory::handle ptr)
             {
-                g_pointers->m_gta.m_handle_join_request = ptr.sub(0x2D).as<PVOID>();
+                g_pointers->m_gta.m_handle_join_request = ptr.sub(0x26).as<PVOID>();
             }
         },
         // Write Join Response Data
